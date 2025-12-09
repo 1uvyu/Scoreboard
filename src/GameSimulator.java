@@ -22,6 +22,20 @@ public class GameSimulator
             {
                 sb.recordPlay(s.nextInt());
             }
+            if (sb.win().equals("Red"))
+                standings[0].win();
+            if (sb.win().equals("Orange"))
+                standings[1].win();
+            if (sb.win().equals("Yellow"))
+                standings[2].win();
+            if (sb.win().equals("Green"))
+                standings[3].win();
+            if (sb.win().equals("Blue"))
+                standings[4].win();
+            if (sb.win().equals("Indigo"))
+                standings[5].win();
+            if (sb.win().equals("Violet"))
+                standings[6].win();
         }
     }
 
@@ -48,7 +62,7 @@ public class GameSimulator
     {
         sort();
         for (Team t : standings)
-            System.out.println(t + "" + t.getWins());
+            System.out.println(t + " " + t.getWins());
     }
 
     public GameSimulator(int games) throws FileNotFoundException
