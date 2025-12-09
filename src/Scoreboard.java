@@ -30,4 +30,11 @@ public class Scoreboard
     {
         return teamOneScore + "-" + teamTwoScore + "-" + activeTeam;
     }
+
+    public String win()
+    {
+        if (scoreOne > scoreTwo) return teamOne;
+        if (scoreTwo > scoreOne) return teamTwo;
+        return "DRAW";
+    }
 }

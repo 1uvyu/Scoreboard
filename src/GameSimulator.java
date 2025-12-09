@@ -25,6 +25,32 @@ public class GameSimulator
         }
     }
 
+    public void sort()
+    {
+        for (int i = 0; i < standings.length - 1; i++)
+        {
+            int max = i;
+            for (int j = i + 1; j < standings.length; j++)
+            {
+                if (standings[j].getWins() > standings[max].getWins())
+                    max = j;
+            }
+            if (i != max)
+            {
+                Team temp = standings[i];
+                standings[i] = standings[max];
+                standings[max] = temp;
+            }
+        }
+    }
+
+    public void printStandings()
+    {
+        sort();
+        for (Team t : standings)
+            System.out.println(t + "" + t.getWins());
+    }
+
     public GameSimulator(int games) throws FileNotFoundException
     {
         for (int i = 0; i < teams.length; i++)
